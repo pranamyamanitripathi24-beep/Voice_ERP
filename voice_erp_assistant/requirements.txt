@@ -1,0 +1,18 @@
+# --- Core (required to run the API + text-only demo) ---
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+requests             # needed by app/nlu_llm.py to talk to local Ollama
+reportlab            # generate downloadable PDF sales reports
+
+# --- Optional: real AI-based NLU (recommended, still free) ---
+# Install Ollama separately (not a pip package): https://ollama.com
+# Then: ollama pull llama3.2:1b
+# Then: export NLU_ENGINE=llm  (see README "Is it actually AI?" section)
+
+# --- Offline Speech-to-Text ---
+vosk                  # local recognition; download a model separately
+
+# --- Optional: Text-to-Speech ---
+# pyttsx3              # offline TTS, needed for /voice/audio and tts.speak()
